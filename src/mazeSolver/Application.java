@@ -13,7 +13,7 @@ public class Application {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		Maze maze=new Maze(10);
+		MazeReader maze=new MazeReader();
 		int[] entrance=findEntrance(maze.getGrid());
 		new TreeElement(entrance[0],entrance[1],true,null,maze);
 		

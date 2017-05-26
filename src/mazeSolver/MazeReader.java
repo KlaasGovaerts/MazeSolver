@@ -72,4 +72,14 @@ public class MazeReader {
 		checkEmpty();
 		return grid;
 	}
+	
+	public void clear(){
+		for(char[] charArray:grid){
+			for(char c:charArray){
+				if(c=='V'){
+					c=' ';
+				}
+			}
+		}
+	}
 }
