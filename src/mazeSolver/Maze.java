@@ -183,27 +183,6 @@ public class Maze {
 	}
 	
 	/**
-	 * @author Klaas Govaerts
-	 * @param x The x coordinate you want to check.
-	 * @param y The y coordinate you want to check.
-	 * @return The state of the maze at that location
-	 */
-	public char getCoord(int x,int y){
-		try{
-			return grid[x][y];
-		} catch (ArrayIndexOutOfBoundsException exception) {
-			return 'o'; //Returned when out of bounds
-		}
-	}
-	
-	/**
-	 * @author Klaas Govaerts
-	 * @return Grid The maze grid
-	 */
-	public char[][] getGrid(){
-		return grid;
-	}
-	/**
 	 * Data class to represent a coordinate in the maze
 	 *
 	 */

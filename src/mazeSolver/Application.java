@@ -15,6 +15,7 @@ public class Application {
 	public static void main(String[] args) {
 		Maze maze=new Maze(10);
 		int[] entrance=findEntrance(maze.getGrid());
+		new TreeElement(entrance[0],entrance[1],true,null,maze);
 		
 	}
 	
