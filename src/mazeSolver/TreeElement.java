@@ -22,14 +22,28 @@ public class TreeElement {
 			this.xCoord=xCoord;
 			this.yCoord=yCoord;
 			this.root=root;
+			this.parent=parent;
 			MazeReader.getGrid()[xCoord][yCoord]='V';//This means visited
 			MazeReader.print();
 			
 			//Will check all adjacent coordinates
-			for(int i=-1;i<=1;i=i+2){
-				for(int j=-1;j<=1;j=j+2){
-					int xNew=xCoord+i;
-					int yNew=yCoord+j;
+			for(int i=0;i<4;i++){
+					int xNew=xCoord;
+					int yNew=yCoord;
+					switch(i){
+					case 0:
+						yNew=yCoord+1;
+						break;
+					case 1:
+						xNew=xCoord+1;
+						break;
+					case 2:
+						xNew=xCoord-1;
+						break;
+					case 3:
+						yNew=yCoord-1;
+						break;
+					}
 					char result=MazeReader.getGridAtCoord(xNew,yNew);
 					if(result==' '){
 						children.add(new TreeElement(xNew,yNew,false,this));
@@ -37,16 +51,15 @@ public class TreeElement {
 					if(result=='O'&&(!root)){
 						solutionFound=true;
 						MazeReader.clear();
-						TreeElement current=parent;
+						TreeElement current=this;
 						while(current!=null){
 							MazeReader.getGrid()[current.getX()][current.getY()]='*';
-							current=current.parent;
+							current=current.getParent();
+							}
 						}
 					}
 				}
 			}
-		}
-	}
 	
 	public TreeElement getParent(){
 		return parent;

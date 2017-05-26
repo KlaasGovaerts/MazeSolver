@@ -76,13 +76,22 @@ public class MazeReader {
 	
 	public static void clear(){
 		checkEmpty();
+		/*
 		for(char[] charArray:grid){
 			for(char c:charArray){
 				if(c=='V'){
 					c=' ';
 				}
 			}
+		}*/
+		for(int i=0;i<grid.length;i++){
+			for(int j=0;j<grid[i].length;j++){
+				if(grid[i][j]=='V'){
+					grid[i][j]=' ';
+				}
+			}
 		}
+		
 	}
 	
 	public static void print(){
@@ -93,5 +102,6 @@ public class MazeReader {
 			}
 			System.out.println("");
 		}
+		System.out.println("");
 	}
 }
