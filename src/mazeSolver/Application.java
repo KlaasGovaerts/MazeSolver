@@ -13,10 +13,22 @@ public class Application {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		MazeReader maze=new MazeReader();
-		int[] entrance=findEntrance(maze.getGrid());
-		new TreeElement(entrance[0],entrance[1],true,null,maze);
+		System.out.println("Unvsolved Maze");
+		MazeReader.print();
 		
+		int[] entrance=findEntrance(MazeReader.getGrid());
+		/*
+		System.out.println(entrance[0]);
+		System.out.println(entrance[1]);
+		MazeReader.getGrid()[entrance[0]][entrance[1]]='*';
+		MazeReader.print();
+		*/
+		
+		new TreeElement(entrance[0],entrance[1],true,null);
+		
+		System.out.println("");
+		System.out.println("Solved Maze:");
+		MazeReader.print();
 	}
 	
 	/**

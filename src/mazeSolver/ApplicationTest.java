@@ -41,10 +41,5 @@ public class ApplicationTest {
 			assertEquals(Application.findEntrance(mazeWithEntrance)[0],toCheck[i][0]);
 			assertEquals(Application.findEntrance(mazeWithEntrance)[1],toCheck[i][1]);
 		}
-		//assertEquals(new int[2],new int[2]);
-		//maze
-		//maze1[5-1][3]=' ';
-		
 	}
-
 }

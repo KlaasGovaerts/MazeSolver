@@ -39,7 +39,8 @@ public class MazeReader {
 		}
 			grid=new char[wordList.size()][wordList.get(0).length()];
 			for(int i=0;i<wordList.size();i++){
-				grid[i]=wordList.get(0).toCharArray();
+				for(int j=0;j<wordList.get(i).length();j++)
+				grid[i][j]=wordList.get(i).charAt(j);
 			}
 	}
 	
@@ -55,7 +56,7 @@ public class MazeReader {
 	 * @param y The y coordinate you want to check.
 	 * @return The state of the maze at that location
 	 */
-	public char getGridAtCoord(int x,int y){
+	public static char getGridAtCoord(int x,int y){
 		checkEmpty();
 		try{
 			return grid[x][y];
@@ -68,18 +69,29 @@ public class MazeReader {
 	 * @author Klaas Govaerts
 	 * @return Grid The maze grid
 	 */
-	public char[][] getGrid(){
+	public static char[][] getGrid(){
 		checkEmpty();
 		return grid;
 	}
 	
-	public void clear(){
+	public static void clear(){
+		checkEmpty();
 		for(char[] charArray:grid){
 			for(char c:charArray){
 				if(c=='V'){
 					c=' ';
 				}
 			}
+		}
+	}
+	
+	public static void print(){
+		checkEmpty();
+		for(char[] charArray:grid){
+			for(char c:charArray){
+				System.out.print(c);
+			}
+			System.out.println("");
 		}
 	}
 }
