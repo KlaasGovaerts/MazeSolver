@@ -23,7 +23,7 @@ public class MazeReaderTest {
 
 	/**
 	 * Test method for {@link mazeSolver.MazeReader#getGridAtCoord(int, int)}.
-	 * Note: this test class is made for the current maze.txt file.
+	 * Note: this test method is made for the current maze.txt file.
 	 */
 	@Test
 	public void testGetGridAtCoord() {
@@ -37,7 +37,7 @@ public class MazeReaderTest {
 
 	/**
 	 * Test method for {@link mazeSolver.MazeReader#getGrid()}.
-	 * Note: this test class is made for the current maze.txt file.
+	 * Note: this test method is made for the current maze.txt file.
 	 */
 	@Test
 	public void testGetGrid() {

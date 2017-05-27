@@ -10,6 +10,7 @@ import org.junit.Test;
 /**
  * @author Klaas Govaerts
  * Test class for {@link mazeSolver.TreeElement}.
+ * Made for current maze.txt file.
  */
 public class TreeElementTest {
 	private TreeElement element;
