@@ -1,6 +1,3 @@
-/**
- * 
- */
 package mazeSolver;
 
 import static org.junit.Assert.*;
@@ -9,8 +6,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * @author klaas
- *
+ * @author Klaas Govaerts
+ * Test class for {@link mazeSolver.Application}.
  */
 public class ApplicationTest {
 
@@ -40,6 +37,30 @@ public class ApplicationTest {
 			mazeWithEntrance[toCheck[i][0]][toCheck[i][1]]=' ';
 			assertEquals(Application.findEntrance(mazeWithEntrance)[0],toCheck[i][0]);
 			assertEquals(Application.findEntrance(mazeWithEntrance)[1],toCheck[i][1]);
+		}
+	}
+
+	/**
+	 * Test method for {@link mazeSolver.Application#main}.
+	 * Source used: https://stackoverflow.com/questions/1686425/copy-a-2d-array-in-java
+	 */
+	@Test
+	public void testMain(){
+		char[][] grid=MazeReader.getGrid();
+		char[][] gridbefore=new char[grid.length][];
+		for(int i = 0; i < grid.length; i++)
+			gridbefore[i] = grid[i].clone();
+		Application.main(null);
+		char[][] gridafter=MazeReader.getGrid();
+		for(int i=0;i<gridbefore.length;i++){
+			for(int j=0;j<0;j++){
+				if(gridbefore[i][j]=='X'){
+					assertTrue(gridafter[i][j]=='X');
+				}
+				if(gridbefore[i][j]==' '){
+					assertTrue(gridafter[i][j]==' '||gridafter[i][j]=='*');
+				}
+			}
 		}
 	}
 }

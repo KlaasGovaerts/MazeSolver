@@ -1,6 +1,3 @@
-/**
- * 
- */
 package mazeSolver;
 
 import java.io.File;
@@ -44,6 +41,9 @@ public class MazeReader {
 			}
 	}
 	
+	/**
+	 * Read the Mazegrid from file, only if this wasn't done yet.
+	 */
 	private static void checkEmpty(){
 		if(grid==null){
 			generateGrid();
@@ -74,19 +74,14 @@ public class MazeReader {
 		return grid;
 	}
 	
+	/**
+	 * Removes all visited grid elements ('V' means visited), so that the maze returns to it's original state.
+	 */
 	public static void clear(){
 		checkEmpty();
-		/*
-		for(char[] charArray:grid){
-			for(char c:charArray){
-				if(c=='V'){
-					c=' ';
-				}
-			}
-		}*/
 		for(int i=0;i<grid.length;i++){
 			for(int j=0;j<grid[i].length;j++){
-				if(grid[i][j]=='V'){
+				if(grid[i][j]=='V'||grid[i][j]=='*'){
 					grid[i][j]=' ';
 				}
 			}
@@ -94,6 +89,9 @@ public class MazeReader {
 		
 	}
 	
+	/**
+	 * Prints the state of the Mazegrid to the console.
+	 */
 	public static void print(){
 		checkEmpty();
 		for(char[] charArray:grid){
